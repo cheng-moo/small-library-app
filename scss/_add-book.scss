@@ -1,0 +1,126 @@
+@use './config' as *;
+@use './globals' as *;
+body {
+    &.form-overlay {
+        background-color: #00000069;
+        
+        .header {
+            background-color: #7dd3fc30;
+        }
+    }
+}
+.add {
+    padding: 0 rem(10);
+
+    &__card {
+        background-color: $sk-50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__sign {
+
+        &--image {
+            width: 50px;
+            height: 50px;
+            filter: invert(46%) sepia(0%) saturate(24%) hue-rotate(130deg) brightness(95%) contrast(87%);
+            opacity: 0.3;
+            transition: opacity 150ms ease-in-out;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__form {
+        background-color: #fff;
+        max-width: 16.25rem;
+        margin: 0 auto;
+        padding: 1.5625rem 1.25rem;
+        min-height: 60vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-around;
+        border-radius: 7px;
+        box-shadow: 0px 2px 0px 0px rgba(24, 24, 24, 0.2392156863), 0 -2px 0px 0px rgba(0, 0, 0, 0.2117647059);
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        label {
+            font-weight: 400;
+        }
+        input {
+            font-family: inherit;
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            border-color: rgb(201, 193, 193);
+            border-radius: 6px;
+            padding: rem(5) rem(10);
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+            
+            &[type='checkbox'] {
+                border-color: #000;
+                background-color: $sk-300;
+                width: rem(38);
+                height: rem(19);
+                border-radius: 20px;
+                position: relative;
+                transition: background-color 100ms ease-in-out;
+                &::before {
+                    content: "";
+                    width: rem(15);
+                    height: rem(15);
+                    border-radius: 10px;
+                    background-color: #ffffff;
+                    position: absolute;
+                    top: rem(2);
+                    border: 1px solid #b7b7b7;
+                    left: rem(22);
+                    transition: left 250ms ease-in-out;
+                }
+                &:checked::before {
+                    left: rem(1);
+                    transition: left 250ms ease-in-out;
+                }
+                &:checked {
+                    background-color: $sk-100;
+                    transition: background-color 100ms ease-in-out;
+                }
+            }
+
+            &[type='submit'] {
+                padding: rem(10) rem(10);
+                background-image: linear-gradient(
+                    to right,
+                    $sk-300,
+                    $sk-600
+                );
+                border: none;
+                color: #fff;
+                font-weight: 600; 
+            }
+        }
+        h3 {
+            text-align: center;
+        }
+        .wrapper__read {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: rem(10);
+        }
+        
+        &.hide {
+            display: none;
+        }
+    }
+}

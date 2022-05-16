@@ -1,0 +1,227 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.3;
+  font-size: 1rem;
+  background-color: #e0f2fe;
+  color: #44403c;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  line-height: 1.15;
+  color: #075985;
+}
+
+button, .button {
+  position: relative;
+  display: inline-block;
+  padding: 0.875rem 2.1875rem;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 400;
+  transition: opacity 300ms ease-in-out;
+  overflow: hidden;
+}
+button::before, .button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+button:hover::before, .button:hover::before {
+  opacity: 1;
+}
+
+body.form-overlay {
+  background-color: rgba(0, 0, 0, 0.4117647059);
+}
+body.form-overlay .header {
+  background-color: rgba(125, 211, 252, 0.1882352941);
+}
+
+.add {
+  padding: 0 0.625rem;
+}
+.add__card {
+  background-color: #f0f9ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add__sign--image {
+  width: 50px;
+  height: 50px;
+  filter: invert(46%) sepia(0%) saturate(24%) hue-rotate(130deg) brightness(95%) contrast(87%);
+  opacity: 0.3;
+  transition: opacity 150ms ease-in-out;
+}
+.add__sign--image:hover {
+  opacity: 1;
+}
+.add__form {
+  background-color: #fff;
+  max-width: 16.25rem;
+  margin: 0 auto;
+  padding: 1.5625rem 1.25rem;
+  min-height: 60vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  border-radius: 7px;
+  box-shadow: 0px 2px 0px 0px rgba(24, 24, 24, 0.2392156863), 0 -2px 0px 0px rgba(0, 0, 0, 0.2117647059);
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+.add__form label {
+  font-weight: 400;
+}
+.add__form input {
+  font-family: inherit;
+  font-size: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  border-color: rgb(201, 193, 193);
+  border-radius: 6px;
+  padding: 0.3125rem 0.625rem;
+}
+.add__form input:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+.add__form input[type=checkbox] {
+  border-color: #000;
+  background-color: #7dd3fc;
+  width: 2.375rem;
+  height: 1.1875rem;
+  border-radius: 20px;
+  position: relative;
+  transition: background-color 100ms ease-in-out;
+}
+.add__form input[type=checkbox]::before {
+  content: "";
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0.125rem;
+  border: 1px solid #b7b7b7;
+  left: 1.375rem;
+  transition: left 250ms ease-in-out;
+}
+.add__form input[type=checkbox]:checked::before {
+  left: 0.0625rem;
+  transition: left 250ms ease-in-out;
+}
+.add__form input[type=checkbox]:checked {
+  background-color: #e0f2fe;
+  transition: background-color 100ms ease-in-out;
+}
+.add__form input[type=submit] {
+  padding: 0.625rem 0.625rem;
+  background-image: linear-gradient(to right, #7dd3fc, #0284c7);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+.add__form h3 {
+  text-align: center;
+}
+.add__form .wrapper__read {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.625rem;
+}
+.add__form.hide {
+  display: none;
+}
+
+.header {
+  padding: 0 0.625rem;
+  background-color: #7dd3fc;
+  box-shadow: 0 2px 0px 0px rgba(0, 0, 0, 0.3490196078);
+  margin-bottom: 1.25rem;
+}
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.9375rem 0.625rem;
+  align-items: center;
+}
+.header__logo--text {
+  color: #000;
+  font-weight: 700;
+  font-size: 2.1875rem;
+}
+.header__login {
+  position: relative;
+  background-color: #e0f2fe;
+  border-radius: 10px;
+  padding: 0.625rem;
+  overflow: hidden;
+}
+.header__login a {
+  color: #000;
+  font-weight: 500;
+  display: inline-block;
+}
+.header__login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(30, 36, 42, 0.34);
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+.header__login:hover::before {
+  opacity: 1;
+  overflow: hidden;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 300px;
+  gap: 20px;
+}/*# sourceMappingURL=main.css.map */

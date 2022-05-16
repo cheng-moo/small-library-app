@@ -1,0 +1,53 @@
+@use './config' as *;
+@use './globals' as *;
+
+.header {
+    padding: 0 rem(10);
+    background-color: $sk-300;
+    box-shadow: 0 2px 0px 0px #00000059;
+    margin-bottom: rem(20);
+   
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: rem(15) rem(10);
+        align-items: center;
+    }
+    &__logo {
+        &--text {
+            color: #000;
+            font-weight: 700;
+            font-size: rem(35);
+        }
+    }
+    &__login {
+        position: relative;
+        background-color: $sk-100;
+        border-radius: 10px;
+        padding: rem(10);
+        overflow: hidden;
+
+         a {
+            color: #000;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+       &::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           right: 0;
+           bottom: 0;
+           left: 0;
+           background-color: rgb(30 36 42 / 34%);
+           opacity: 0;
+           transition: opacity 150ms ease-in-out;
+           
+       }
+       &:hover::before {
+           opacity: 1;
+           overflow: hidden;
+       }
+    }
+}

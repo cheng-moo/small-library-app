@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class=""> <!-- form overlay--> 
+    <header class="header">
+        <nav>
+            <a href="#" class="header__logo">
+                <div class="header__logo--text">library</div>
+            </a>
+            <div class="header__login"><a href="#">Login</a></div>
+        </nav>
+    </header>
+    <section class="add">
+        <div class="cards-grid">
+            <div class="add__card">
+                <div class="add__sign">
+                    <img src="./images/plus-sign-svgrepo-com.svg" alt="add" class="add__sign--image">
+                </div>
+            </div>
+        </div>
+        <form action="POST" class="add__form hide ">
+            <h3>Add new book</h3>
+            <input type="text" id ='title' name="title" placeholder="Title">
+            <input type="text" id ='author' name="author" placeholder="Author">
+            <input type="text" id ='pages' name ='pages' placeholder="Pages">
+            <div class="wrapper__read">
+                <label for="read">Have you read it?</label>
+                <input type="checkbox" id="read" name="read">
+            </div>
+            <input type="submit" id="submit" name="submit" value="Submit">
+        </form>
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

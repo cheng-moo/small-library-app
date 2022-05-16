@@ -1,0 +1,61 @@
+
+//Colors
+  //Sky Palette
+$sk-50: #f0f9ff;
+
+$sk-100: #e0f2fe;
+
+$sk-200: #bae6fd;
+
+$sk-300: #7dd3fc;
+
+$sk-400: #38bdf8;
+
+$sk-500: #0ea5e9;
+
+$sk-600: #0284c7;
+
+$sk-700: #0369a1;
+
+$sk-800: #075985;
+
+$sk-900: #0c4a6e;
+
+// Stone Palette
+$st-500: #78716c;
+
+$st-600: #57534e;
+
+$st-700: #44403c;
+
+$st-800: #292524;
+
+
+//Font Sizes
+$mdFont: 1rem;
+$largerFont: 1.1rem;
+$lgFont: 1.3rem;
+
+// Breakpoints
+// 640px, 1024px, 1400px
+$breakpoints-up: ('medium': '40em', 'large': '64em', 'xlarge': '87.5em');
+// 639px, 1023px, 1399px
+$breakpoints-down: ('small': '39.9375em', 'medium': '63.9375em', 'large': '87.4375em');
+
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content
+    }
+};
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get($breakpoints-down, $size)) {
+        @content
+    }
+};
+
+// rem convertor
+
+@function rem($px) {
+    @return #{#{$px / 16} + 'rem'};
+}
+
