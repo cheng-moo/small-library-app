@@ -163,6 +163,7 @@ function display(titleDis, authorDis, pagesDis, readDis) {
             console.log(childToRemoveDataIndex);
             myLibrary.splice(childToRemoveDataIndex, 1);
             childToRemove.remove();
+            i -= 1;
         }
 
         btnRead.addEventListener('click', changeReadState);
@@ -182,3 +183,4 @@ function display(titleDis, authorDis, pagesDis, readDis) {
 
     // }
 }
+
