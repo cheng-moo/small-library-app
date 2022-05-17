@@ -1,0 +1,38 @@
+@use './config' as *;
+@use './globals' as *;
+
+@keyframes scale-up {
+    from {
+        transform: translateX(-50%) scale(0.1);
+        visibility: hidden;
+    }
+    1% {
+        transform: translateX(-50%) scale(0.1);
+        visibility: visible;
+    }
+    to {
+        transform: translateX(-50%) scale(1);
+        visibility: visible;
+    }
+};
+
+@keyframes scale-down {
+    from {
+        transform: translateX(-50%) scale(1);
+        visibility: visible;
+    }
+    99% {
+        transform: translateX(-50%) scale(0.1);
+        visibility: visible;
+    }
+    to {
+        transform: translateX(-50%) scale(0.1);
+        visibility: hidden;
+    }
+};
+.scale-up {
+    animation: scale-up 300ms linear forwards;
+}
+.scale-down {
+    animation: scale-down 300ms linear forwards;
+}
