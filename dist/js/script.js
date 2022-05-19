@@ -60,6 +60,8 @@ class Book {
 // let readValue;
 
 //Submitting values
+// Check for if the book is already existing
+const error = document.querySelector('#title+small');
 
 form.addEventListener('submit', getValues);
 function getValues(e) {
@@ -69,6 +71,15 @@ function getValues(e) {
     let pagesValue = `${document.getElementById('pages').value}`;
     let readValue = `${document.getElementById('read').checked}`;
    
+    for (const elem of myLibrary) {
+        if (elem.title === titleValue) {
+            error.textContent = 'This Book Is Existing';
+            error.style.color = 'red';
+            error.style.fontWeight = '500';
+            error.style.marginTop = `${-8}px`
+            return;
+        }
+    }
     addBookToLibrary(titleValue, authorValue, pagesValue, readValue);
     display(titleValue, authorValue, pagesValue, readValue);
     form.classList.add('hide');
@@ -80,9 +91,9 @@ function getValues(e) {
 // Add Book To Library
 
 function addBookToLibrary(title, author, pages, read) {
-   let obj = new Book(title, author, pages, read);
-   console.log(obj);
-   myLibrary.push(obj);
+    let obj = new Book(title, author, pages, read);
+    console.log(obj);
+    myLibrary.push(obj);
 }
 
 // Loop through the array and display each book
@@ -92,23 +103,23 @@ const addCard = document.querySelector('.add__card');
 let i = 0;
 function display(titleDis, authorDis, pagesDis, readDis) {
     // while (!cardsGrid.lastElementChild.classList.contains('add__card')) {
-    //     cardsGrid.removeChild(cardsGrid.lastChild);
-    //     if (cardsGrid.lastElementChild.hasAttribute('data-index')) {
-    //     break;
+        //     cardsGrid.removeChild(cardsGrid.lastChild);
+        //     if (cardsGrid.lastElementChild.hasAttribute('data-index')) {
+            //     break;
     //     }
     // }
     // for (let i = 0; i < myLibrary.length; i++) {
-
+        
         let newBook = document.createElement('div');
         // newBook.classList.add('card');
         newBook.classList.add('card');
         // submitBtn.addEventListener('click', function() {
-        //     i++;
-        // })
-        newBook.dataset.index = `${i}`;
-        
-        cardsGrid.appendChild(newBook);
-
+            //     i++;
+            // })
+            newBook.dataset.index = `${i}`;
+            
+            cardsGrid.appendChild(newBook);
+            
         let title = document.createElement('h1');
         title.classList.add('card__title');
         title.textContent = titleDis;
@@ -184,3 +195,9 @@ function display(titleDis, authorDis, pagesDis, readDis) {
     // }
 }
 
+form.addEventListener('submit', checkRepeat)
+function checkRepeat() {
+    myLibrary.every(elem => {
+
+    })
+}
